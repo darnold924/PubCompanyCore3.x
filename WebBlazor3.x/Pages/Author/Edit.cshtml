@@ -1,0 +1,53 @@
+﻿@page
+@model EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE html>
+
+<style type="text/css">
+    
+</style>
+<html>
+<head>
+    <title>Edit</title>
+</head>
+
+<link rel="stylesheet" href="Styles/StyleSheet.CSS" />
+
+<body>
+    <h1>Author</h1>
+
+<form method="post">
+    <fieldset>
+
+        <legend>Edit</legend>
+
+        @Html.Hidden("Author.AuthorID")
+
+        <div class="editor-field">
+            @Html.Label("First Name:")
+            <input type='text' class='txtbox' asp-for="Author.FirstName" />
+            <span class="alert-danger" asp-validation-for="Author.FirstName"></span>
+
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.Label("Last Name:")
+            <input type='text' class='txtbox' asp-for="Author.LastName" />
+            <span class="alert-danger" asp-validation-for="Author.LastName"></span>
+        </div>
+        <br />
+
+        <p>
+            <input type="submit" name="submit" value="Save" />
+            <input type="submit" name="submit" value="Cancel" />
+        </p>
+
+    </fieldset>
+</form>
+
+</body>
+</html>
+

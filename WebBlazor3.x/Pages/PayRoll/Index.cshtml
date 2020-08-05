@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payrolls</title>
+</head>
+<body>
+<h1>Payrolls</h1>
+
+<form>
+
+    <a href="/PayRoll/Create">Create</a>
+   
+    <br /><br />
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th colspan="4">Actions</th>
+        </tr>
+        @foreach (var item in Model.PayRollVM.Payrolls)
+        {
+            <tr>
+                <td>@item.AuthorFirstName</td>
+                <td>@item.AuthorLastName</td>
+                <td>
+                    <a href="/PayRoll/Edit?id=@item.PayRollId">Edit</a>
+                </td>
+                <td>
+                    <a href="/PayRoll/Detail?id=@item.PayRollId">Detail</a>
+                </td>
+
+                <td>
+                    <a href="/PayRoll/Index?id=@item.PayRollId&handler=Delete"
+                       onclick="return confirm('Are you sure, you want to delete this payroll?')">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+</form>
+</body>
+</html>
+

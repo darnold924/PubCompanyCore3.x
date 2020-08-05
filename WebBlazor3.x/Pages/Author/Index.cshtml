@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Author Page";
+}
+
+<h1>Authors</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Authors</title>
+</head>
+<body>
+   
+        <a asp-page="/Author/Create">Create</a> 
+
+        <br /><br />
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>AuthorID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th colspan="4">Actions</th>
+            </tr>
+            @foreach (var item in Model.AuthorVM.Authors)
+            {
+                <tr>
+                    <td>@item.AuthorID</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>
+                        <a href="/Author/Edit?id=@item.AuthorID">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Author/Detail?id=@item.AuthorID">Detail</a>
+                    </td>
+
+                    <td>
+                        <a href="/Author/Index?id=@item.AuthorID&handler=Delete"
+                           onclick="return confirm('Are you sure, you want to delete this author?')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+</body>
+</html>
+
+

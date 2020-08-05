@@ -1,0 +1,48 @@
+﻿@page
+@model ArticleIndexModel
+@{
+    ViewData["Title"] = "ArticleIndex";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Articles</title>
+</head>
+<body>
+<h1>Articles</h1>
+
+<form>
+
+    <a href="/Article/Create?id=@Model.Authorid">Create</a>
+    <a href="/Article/Index">Cancel</a>
+
+    <br /><br />
+    Author: @Model.ArticleVM.Articles[0].AuthorName
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Title</th>
+            <th colspan="4">Actions</th>
+        </tr>
+        @foreach (var item in Model.ArticleVM.Articles)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>
+                    <a href="/Article/Edit?id=@item.ArticleId">Edit</a>
+                </td>
+                <td>
+                    <a href="/Article/ArticleIndex?id=@item.ArticleId&handler=Delete"
+                       onclick="return confirm('Are you sure, you want to delete this article?')">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+</form>
+</body>
+</html>
+

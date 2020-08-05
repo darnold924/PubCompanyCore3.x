@@ -1,0 +1,50 @@
+﻿@page
+@model DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<html>
+<body>
+<h1>Author Payroll</h1>
+
+<form>
+
+    <fieldset>
+
+        <legend>Detail</legend>
+        
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("PayRollId:")
+                @Html.DisplayText("PayRoll.PayRollId")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("First Name:")
+                @Html.DisplayText("PayRoll.AuthorFirstName")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("Last Name:")
+                @Html.DisplayText("PayRoll.AuthorLastName")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("Salary:")
+                @Html.DisplayText("PayRoll.Salary")
+            </div>
+        </div>
+      
+    </fieldset>
+
+</form>
+</body>
+</html>
+
+

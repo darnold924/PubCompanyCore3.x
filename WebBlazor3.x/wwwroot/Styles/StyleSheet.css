@@ -1,0 +1,27 @@
+﻿body {
+}
+.editor-field > label {
+    float: left;
+    width: 150px;
+}
+
+.txtbox {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: white;
+    color: black;
+    cursor: text;
+    border-bottom: 1px solid #104A7B;
+    border-right: 1px solid #104A7B;
+    border-left: 1px solid #104A7B;
+    border-top: 1px solid #104A7B;
+    padding-top: 10px;
+}
+
+.txtarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: white;
+    color: black;
+    cursor: text;
+ }

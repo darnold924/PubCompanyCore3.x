@@ -1,0 +1,69 @@
+﻿@page
+@model EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="Styles/StyleSheet.CSS" />
+
+<html>
+<head>
+    <title>Create</title>
+</head>
+
+<body>
+<h1>Author Payroll</h1>
+
+<form method="post">
+
+    <fieldset>
+
+        <legend>Edit</legend>
+
+        @Html.Hidden("PayRoll.PayRollId")
+        @Html.Hidden("PayRoll.AuthorId")
+        @Html.Hidden("PayRoll.AuthorFirstName")
+        @Html.Hidden("PayRoll.AuthorLastName")
+        @Html.Hidden("PayRoll.AuthorTypeId")
+
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("PayRollId:")
+                @Html.DisplayText("PayRoll.PayRollId")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("First Name:")
+                @Html.DisplayText("PayRoll.AuthorFirstName")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("Last Name:")
+                @Html.DisplayText("PayRoll.AuthorLastName")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-field">
+                @Html.Label("Salary:")
+                <input type='text' class='txtbox' asp-for="PayRoll.Salary" />
+                <span class="alert-danger" asp-validation-for="PayRoll.Salary"></span>
+            </div>
+        </div>
+        <br />
+        <p>
+            <input type="submit" name="submit" value="Save" />
+            <input type="submit" name="submit" value="Cancel" />
+        </p>
+
+    </fieldset>
+
+</form>
+</body>
+</html>
+

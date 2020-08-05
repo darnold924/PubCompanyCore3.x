@@ -1,0 +1,59 @@
+﻿@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="Styles/StyleSheet.CSS" />
+
+<html>
+<head>
+    <title>Create</title>
+</head>
+
+<body>
+<h1>Author Payroll</h1>
+
+    <form method="post">
+
+        <fieldset>
+
+            <legend>Create</legend>
+
+            <div asp-validation-summary="All">
+                <span>Please correct the following errors</span>
+            </div>
+
+            @Html.Hidden("PayRoll.AuthorId")
+
+            <div class="form-group">
+                <div class="editor-field">
+                    @Html.Label("Author:")
+                    <select name="PayRoll.AuthorTypeId" asp-items="Model.PayRoll.AuthorTypes"></select>
+                    <span class="alert-danger" asp-validation-for="PayRoll.AuthorTypeId"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="editor-field">
+                    @Html.Label("Salary:")
+                    <input type='text' class='txtbox' asp-for="PayRoll.Salary" />
+                    <span class="alert-danger" asp-validation-for="PayRoll.Salary"></span>
+                </div>
+            </div>
+            <br />
+            <p>
+                <input type="submit" name="submit" value="Save" />
+                <input type="submit" name="submit" value="Cancel" />
+            </p>
+
+        </fieldset>
+
+</form>
+</body>
+</html>
+
+
+
+
